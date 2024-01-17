@@ -29,7 +29,7 @@ pygame.display.set_caption("Planetarium")
 running = True
 
 # Planets
-sun = Sun(40, YELLOW, screen)
+sun = Sun(WIDTH/2, HEIGHT/2, 40, YELLOW, screen)
 venus = Planet (50, 100, 10, GREY, screen, 0.01, WIDTH, HEIGHT)
 mercury = Planet (100, 150, 15, ORANGE, screen, 0.005, WIDTH, HEIGHT)
 earth = Planet (150, 200, 20, BLUE, screen, 0.003, WIDTH, HEIGHT)
