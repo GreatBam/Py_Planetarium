@@ -8,4 +8,4 @@ class Orbit:
         self.screen = screen
         
     def draw(self):
-        pygame.draw.ellipse(self.screen, self.color, (400-(self.x/2), 400-(self.y/2), self.x, self.y), 100, 1)
+        pygame.draw.ellipse(self.screen, self.color, (400-(self.x/2), 400-(self.y/2), self.x, self.y), 1)
