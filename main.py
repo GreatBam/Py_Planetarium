@@ -34,12 +34,20 @@ venus = Planet (400, 400, 50, 100, 10, GREY, screen, 0.01, WIDTH, HEIGHT)
 mercury = Planet (400, 400, 100, 150, 15, ORANGE, screen, 0.005, WIDTH, HEIGHT)
 earth = Planet (400, 400, 150, 200, 20, BLUE, screen, 0.003, WIDTH, HEIGHT)
 mars = Planet (400, 400, 200, 250, 25, RED, screen, 0.002, WIDTH, HEIGHT)
+jupiter = Planet (400, 400, 250, 300, 30, PURPLE, screen, 0.001, WIDTH, HEIGHT)
+saturn = Planet (400, 400, 300, 350, 35, GREEN, screen, 0.0005, WIDTH, HEIGHT)
+uranus = Planet (400, 400, 350, 400, 40, WHITE, screen, 0.0003, WIDTH, HEIGHT)
+neptune = Planet (400, 400, 400, 450, 45, GREY, screen, 0.0001, WIDTH, HEIGHT)
 
 # Orbits
 venus_orbit = Orbit(200, 100, WHITE, screen)
 mercury_orbit = Orbit(300, 200, WHITE, screen)
 earth_orbit = Orbit(400, 300, WHITE, screen)
 mars_orbit = Orbit(500, 400, WHITE, screen)
+jupiter_orbit = Orbit(600, 500, WHITE, screen)
+saturn_orbit = Orbit(700, 600, WHITE, screen)
+uranus_orbit = Orbit(800, 700, WHITE, screen)
+neptune_orbit = Orbit(900, 800, WHITE, screen)
 
 # Main loop
 while running:
@@ -55,10 +63,18 @@ while running:
     mercury_orbit.draw()
     earth_orbit.draw()
     mars_orbit.draw()
+    jupiter_orbit.draw()
+    saturn_orbit.draw()
+    uranus_orbit.draw()
+    neptune_orbit.draw()
     venus.move()
     mercury.move()
     earth.move()
     mars.move()
+    jupiter.move()
+    saturn.move()
+    uranus.move()
+    neptune.move()
     
     # Draw
     pygame.display.flip()
