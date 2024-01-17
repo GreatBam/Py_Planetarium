@@ -1,9 +1,7 @@
 import pygame, sys, math
 
 class Planet:
-    def __init__(self, x: int, y: int, ratio_x: int, ratio_y: int, radius: int, color: tuple, screen: object, angle_increase: int, width: int, height: int):
-        self.x = x
-        self.y = y
+    def __init__(self, ratio_x: int, ratio_y: int, radius: int, color: tuple, screen: object, angle_increase: int, width: int, height: int):
         self.ratio_x = ratio_x
         self.ratio_y = ratio_y
         self.radius = radius
@@ -13,6 +11,8 @@ class Planet:
         self.width = width
         self.height = height
         self.angle = 0
+        self.x = self.width / 2
+        self.y = self.height / 2
         
     def move(self):
         self.y = int(math.cos(self.angle) * self.ratio_x) + self.width / 2
