@@ -1,10 +1,15 @@
 # Planetarium
 
 # Imports
-import pygame
+import pygame, random
 from sun import Sun
 from planet import Planet
 from orbit import Orbit
+
+def shuffle(orig):
+    dest = orig[:]
+    random.shuffle(dest)
+    return dest
 
 # Constants
 WIDTH = 850
@@ -13,41 +18,55 @@ HEIGHT = 850
 # Colors
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
+YELLOW = (255, 255, 0)
 GREY = (150, 150, 150)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 PURPLE = (128, 0, 128)
-YELLOW = (255, 255, 0)
 ORANGE = (255, 165, 0)
+
+# lists for random sizes, colors and velocities
+sizes = [5, 10, 15, 20, 25, 30, 35, 40]
+sizes.pop(0), sizes.pop(0), sizes.pop(0)
+print("sizes", sizes)
+shuffled_sizes = shuffle(sizes)
+print("shuffled sizes", shuffled_sizes)
+colors = [RED, GREEN, BLUE, PURPLE, ORANGE, WHITE, GREY, YELLOW]
+shuffled_colors = shuffle(colors)
+velocities = [0.01, 0.005, 0.003, 0.002, 0.001, 0.0005, 0.0003, 0.0001]
+shuffled_velocities = shuffle(velocities)
 
 # Pygame setup
 pygame.init()
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Planetarium")
+rand = random.randint(0, 7)
 running = True
 
-# Planets
+# Sun
 sun = Sun(WIDTH/2, HEIGHT/2, 40, YELLOW, screen)
-venus = Planet (50, 100, 10, GREY, screen, 0.01, WIDTH, HEIGHT)
-mercury = Planet (100, 150, 15, ORANGE, screen, 0.005, WIDTH, HEIGHT)
-earth = Planet (150, 200, 20, BLUE, screen, 0.003, WIDTH, HEIGHT)
-mars = Planet (200, 250, 25, RED, screen, 0.002, WIDTH, HEIGHT)
-jupiter = Planet (250, 300, 30, PURPLE, screen, 0.001, WIDTH, HEIGHT)
-saturn = Planet (300, 350, 35, GREEN, screen, 0.0005, WIDTH, HEIGHT)
-uranus = Planet (350, 400, 40, WHITE, screen, 0.0003, WIDTH, HEIGHT)
-neptune = Planet (400, 450, 45, GREY, screen, 0.0001, WIDTH, HEIGHT)
+
+# Planets
+venus = Planet (50, 100, sizes[0], shuffled_colors[0], screen, shuffled_velocities[0], WIDTH, HEIGHT)
+mercury = Planet (100, 150, sizes[1], shuffled_colors[1], screen, shuffled_velocities[1], WIDTH, HEIGHT)
+earth = Planet (150, 200, sizes[2], shuffled_colors[2], screen, shuffled_velocities[2], WIDTH, HEIGHT)
+mars = Planet (200, 250, shuffled_sizes[0], shuffled_colors[3], screen, shuffled_velocities[3], WIDTH, HEIGHT)
+jupiter = Planet (250, 300, shuffled_sizes[1], shuffled_colors[4], screen, shuffled_velocities[4], WIDTH, HEIGHT)
+saturn = Planet (300, 350, shuffled_sizes[2], shuffled_colors[5], screen, shuffled_velocities[5], WIDTH, HEIGHT)
+urandnus = Planet (350, 400, shuffled_sizes[3], shuffled_colors[6], screen, shuffled_velocities[6], WIDTH, HEIGHT)
+neptune = Planet (400, 450, shuffled_sizes[4], shuffled_colors[7], screen, shuffled_velocities[7], WIDTH, HEIGHT)
 
 # Orbits
-venus_orbit = Orbit(200, 100, GREY, screen, WIDTH, HEIGHT)
-mercury_orbit = Orbit(300, 200, ORANGE, screen, WIDTH, HEIGHT)
-earth_orbit = Orbit(400, 300, BLUE, screen, WIDTH, HEIGHT)
-mars_orbit = Orbit(500, 400, RED, screen, WIDTH, HEIGHT)
-jupiter_orbit = Orbit(600, 500, PURPLE, screen, WIDTH, HEIGHT)
-saturn_orbit = Orbit(700, 600, GREEN, screen, WIDTH, HEIGHT)
-uranus_orbit = Orbit(800, 700, WHITE, screen, WIDTH, HEIGHT)
-neptune_orbit = Orbit(900, 800, GREY, screen, WIDTH, HEIGHT)
+venus_orbit = Orbit(200, 100, shuffled_colors[0], screen, WIDTH, HEIGHT)
+mercury_orbit = Orbit(300, 200, shuffled_colors[1], screen, WIDTH, HEIGHT)
+earth_orbit = Orbit(400, 300, shuffled_colors[2], screen, WIDTH, HEIGHT)
+mars_orbit = Orbit(500, 400, shuffled_colors[3], screen, WIDTH, HEIGHT)
+jupiter_orbit = Orbit(600, 500, shuffled_colors[4], screen, WIDTH, HEIGHT)
+saturn_orbit = Orbit(700, 600, shuffled_colors[5], screen, WIDTH, HEIGHT)
+uranus_orbit = Orbit(800, 700, shuffled_colors[6], screen, WIDTH, HEIGHT)
+neptune_orbit = Orbit(900, 800, shuffled_colors[7], screen, WIDTH, HEIGHT)
 
 # Main loop
 while running:
