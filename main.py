@@ -7,8 +7,8 @@ from planet import Planet
 from orbit import Orbit
 
 # Constants
-WIDTH = 900
-HEIGHT = 900
+WIDTH = 850
+HEIGHT = 850
 
 # Colors
 BLACK = (0, 0, 0)
@@ -40,14 +40,14 @@ uranus = Planet (350, 400, 40, WHITE, screen, 0.0003, WIDTH, HEIGHT)
 neptune = Planet (400, 450, 45, GREY, screen, 0.0001, WIDTH, HEIGHT)
 
 # Orbits
-venus_orbit = Orbit(200, 100, WHITE, screen, WIDTH, HEIGHT)
-mercury_orbit = Orbit(300, 200, WHITE, screen, WIDTH, HEIGHT)
-earth_orbit = Orbit(400, 300, WHITE, screen, WIDTH, HEIGHT)
-mars_orbit = Orbit(500, 400, WHITE, screen, WIDTH, HEIGHT)
-jupiter_orbit = Orbit(600, 500, WHITE, screen, WIDTH, HEIGHT)
-saturn_orbit = Orbit(700, 600, WHITE, screen, WIDTH, HEIGHT)
+venus_orbit = Orbit(200, 100, GREY, screen, WIDTH, HEIGHT)
+mercury_orbit = Orbit(300, 200, ORANGE, screen, WIDTH, HEIGHT)
+earth_orbit = Orbit(400, 300, BLUE, screen, WIDTH, HEIGHT)
+mars_orbit = Orbit(500, 400, RED, screen, WIDTH, HEIGHT)
+jupiter_orbit = Orbit(600, 500, PURPLE, screen, WIDTH, HEIGHT)
+saturn_orbit = Orbit(700, 600, GREEN, screen, WIDTH, HEIGHT)
 uranus_orbit = Orbit(800, 700, WHITE, screen, WIDTH, HEIGHT)
-neptune_orbit = Orbit(900, 800, WHITE, screen, WIDTH, HEIGHT)
+neptune_orbit = Orbit(900, 800, GREY, screen, WIDTH, HEIGHT)
 
 # Main loop
 while running:
@@ -59,22 +59,26 @@ while running:
     # Logic
     screen.fill(BLACK)
     sun.draw()
+    
+    # Orbits
     venus_orbit.draw()
     mercury_orbit.draw()
     earth_orbit.draw()
     mars_orbit.draw()
     jupiter_orbit.draw()
     saturn_orbit.draw()
-    uranus_orbit.draw()
-    neptune_orbit.draw()
+    # uranus_orbit.draw()
+    # neptune_orbit.draw()
+    
+    # Planets
     venus.move()
     mercury.move()
     earth.move()
     mars.move()
     jupiter.move()
     saturn.move()
-    uranus.move()
-    neptune.move()
+    # uranus.move()
+    # neptune.move()
     
     # Draw
     pygame.display.flip()
