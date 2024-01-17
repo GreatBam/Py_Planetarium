@@ -1,7 +1,7 @@
 import pygame
 
 class Orbit:
-    def __init__(self, x, y, color, screen):
+    def __init__(self, x: int, y: int, color: tuple, screen: object):
         self.x = x
         self.y = y
         self.color = color

@@ -1,7 +1,7 @@
 import pygame
 
 class Sun:
-    def __init__(self, x, y, radius, color, screen):
+    def __init__(self, x: int, y: int, radius: int, color: tuple, screen: object):
         self.x = x
         self.y = y
         self.radius = radius
