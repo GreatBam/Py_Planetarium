@@ -40,3 +40,29 @@ venus_orbit = Orbit(200, 100, WHITE, screen)
 mercury_orbit = Orbit(300, 200, WHITE, screen)
 earth_orbit = Orbit(400, 300, WHITE, screen)
 mars_orbit = Orbit(500, 400, WHITE, screen)
+
+# Main loop
+while running:
+    # Event loop
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+            
+    # Logic
+    screen.fill(BLACK)
+    sun.draw()
+    venus_orbit.draw()
+    mercury_orbit.draw()
+    earth_orbit.draw()
+    mars_orbit.draw()
+    venus.move()
+    mercury.move()
+    earth.move()
+    mars.move()
+    
+    # Draw
+    pygame.display.flip()
+    clock.tick(60)
+    
+# Close window on quit
+pygame.quit()
