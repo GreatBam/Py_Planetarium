@@ -29,11 +29,11 @@ pygame.display.set_caption("Planetarium")
 running = True
 
 # Planets
-sun = Sun(400, 400, 50, YELLOW, screen)
-venus = Planet (400, 400, 100, 50, 10, GREY, screen, 0.01, WIDTH, HEIGHT)
-mercury = Planet (400, 400, 150, 100, 15, ORANGE, screen, 0.005, WIDTH, HEIGHT)
-earth = Planet (400, 400, 200, 150, 20, BLUE, screen, 0.003, WIDTH, HEIGHT)
-mars = Planet (400, 400, 250, 200, 25, RED, screen, 0.002, WIDTH, HEIGHT)
+sun = Sun(400, 400, 40, YELLOW, screen)
+venus = Planet (400, 400, 50, 100, 10, GREY, screen, 0.01, WIDTH, HEIGHT)
+mercury = Planet (400, 400, 100, 150, 15, ORANGE, screen, 0.005, WIDTH, HEIGHT)
+earth = Planet (400, 400, 150, 200, 20, BLUE, screen, 0.003, WIDTH, HEIGHT)
+mars = Planet (400, 400, 200, 250, 25, RED, screen, 0.002, WIDTH, HEIGHT)
 
 # Orbits
 venus_orbit = Orbit(200, 100, WHITE, screen)
