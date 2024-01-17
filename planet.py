@@ -15,7 +15,7 @@ class Planet:
         self.y = self.height / 2
         
     def move(self):
-        self.y = int(math.cos(self.angle) * self.ratio_x) + self.width / 2
+        self.y = (int(math.cos(self.angle) * self.ratio_x) + self.width / 2)
         self.x = (int(math.sin(self.angle) * self.ratio_y) + self.height / 2)
         pygame.draw.circle(self.screen, self.color, (self.x, self.y), self.radius)
         self.angle -= self.angle_increase

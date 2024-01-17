@@ -27,11 +27,9 @@ PURPLE = (128, 0, 128)
 ORANGE = (255, 165, 0)
 
 # lists for random sizes, colors and velocities
-sizes = [5, 10, 15, 20, 25, 30, 35, 40]
-sizes.pop(0), sizes.pop(0), sizes.pop(0)
-print("sizes", sizes)
-shuffled_sizes = shuffle(sizes)
-print("shuffled sizes", shuffled_sizes)
+sizes_1 = [8, 10, 15]
+sizes_2 = [20, 25, 30, 35, 36]
+shuffled_sizes = shuffle(sizes_2)
 colors = [RED, GREEN, BLUE, PURPLE, ORANGE, WHITE, GREY, YELLOW]
 shuffled_colors = shuffle(colors)
 velocities = [0.01, 0.005, 0.003, 0.002, 0.001, 0.0005, 0.0003, 0.0001]
@@ -49,13 +47,13 @@ running = True
 sun = Sun(WIDTH/2, HEIGHT/2, 40, YELLOW, screen)
 
 # Planets
-venus = Planet (50, 100, sizes[0], shuffled_colors[0], screen, shuffled_velocities[0], WIDTH, HEIGHT)
-mercury = Planet (100, 150, sizes[1], shuffled_colors[1], screen, shuffled_velocities[1], WIDTH, HEIGHT)
-earth = Planet (150, 200, sizes[2], shuffled_colors[2], screen, shuffled_velocities[2], WIDTH, HEIGHT)
+venus = Planet (50, 100, sizes_1[0], shuffled_colors[0], screen, shuffled_velocities[0], WIDTH, HEIGHT)
+mercury = Planet (100, 150, sizes_1[1], shuffled_colors[1], screen, shuffled_velocities[1], WIDTH, HEIGHT)
+earth = Planet (150, 200, sizes_1[2], shuffled_colors[2], screen, shuffled_velocities[2], WIDTH, HEIGHT)
 mars = Planet (200, 250, shuffled_sizes[0], shuffled_colors[3], screen, shuffled_velocities[3], WIDTH, HEIGHT)
 jupiter = Planet (250, 300, shuffled_sizes[1], shuffled_colors[4], screen, shuffled_velocities[4], WIDTH, HEIGHT)
 saturn = Planet (300, 350, shuffled_sizes[2], shuffled_colors[5], screen, shuffled_velocities[5], WIDTH, HEIGHT)
-urandnus = Planet (350, 400, shuffled_sizes[3], shuffled_colors[6], screen, shuffled_velocities[6], WIDTH, HEIGHT)
+uranus = Planet (350, 400, shuffled_sizes[3], shuffled_colors[6], screen, shuffled_velocities[6], WIDTH, HEIGHT)
 neptune = Planet (400, 450, shuffled_sizes[4], shuffled_colors[7], screen, shuffled_velocities[7], WIDTH, HEIGHT)
 
 # Orbits
