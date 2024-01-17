@@ -7,8 +7,8 @@ from planet import Planet
 from orbit import Orbit
 
 # Constants
-WIDTH = 800
-HEIGHT = 800
+WIDTH = 900
+HEIGHT = 900
 
 # Colors
 BLACK = (0, 0, 0)
@@ -40,14 +40,14 @@ uranus = Planet (350, 400, 40, WHITE, screen, 0.0003, WIDTH, HEIGHT)
 neptune = Planet (400, 450, 45, GREY, screen, 0.0001, WIDTH, HEIGHT)
 
 # Orbits
-venus_orbit = Orbit(200, 100, WHITE, screen)
-mercury_orbit = Orbit(300, 200, WHITE, screen)
-earth_orbit = Orbit(400, 300, WHITE, screen)
-mars_orbit = Orbit(500, 400, WHITE, screen)
-jupiter_orbit = Orbit(600, 500, WHITE, screen)
-saturn_orbit = Orbit(700, 600, WHITE, screen)
-uranus_orbit = Orbit(800, 700, WHITE, screen)
-neptune_orbit = Orbit(900, 800, WHITE, screen)
+venus_orbit = Orbit(200, 100, WHITE, screen, WIDTH, HEIGHT)
+mercury_orbit = Orbit(300, 200, WHITE, screen, WIDTH, HEIGHT)
+earth_orbit = Orbit(400, 300, WHITE, screen, WIDTH, HEIGHT)
+mars_orbit = Orbit(500, 400, WHITE, screen, WIDTH, HEIGHT)
+jupiter_orbit = Orbit(600, 500, WHITE, screen, WIDTH, HEIGHT)
+saturn_orbit = Orbit(700, 600, WHITE, screen, WIDTH, HEIGHT)
+uranus_orbit = Orbit(800, 700, WHITE, screen, WIDTH, HEIGHT)
+neptune_orbit = Orbit(900, 800, WHITE, screen, WIDTH, HEIGHT)
 
 # Main loop
 while running:
