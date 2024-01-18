@@ -3,8 +3,6 @@
 # Imports
 import pygame, random, math
 from sun import Sun
-# from planet import Planet
-from orbit import Orbit
 
 def shuffle(orig):
     dest = orig[:]
@@ -20,14 +18,22 @@ class Planet:
         self.screen = screen
         self.angle_increase = angle_increase
         self.angle = 0
-        # self.x = WIDTH / 2
-        # self.y = HEIGHT / 2
         
     def move(self):
         self.y = (int(math.cos(self.angle) * self.ratio_x) + WIDTH / 2)
         self.x = (int(math.sin(self.angle) * self.ratio_y) + HEIGHT / 2)
         pygame.draw.circle(self.screen, self.color, (self.x, self.y), self.radius)
         self.angle -= self.angle_increase
+        
+class Orbit:
+    def __init__(self, x: int, y: int, color: tuple, screen: object):
+        self.x = x
+        self.y = y
+        self.color = color
+        self.screen = screen
+        
+    def draw(self):
+        pygame.draw.ellipse(self.screen, self.color, (WIDTH/2-(self.x/2), HEIGHT/2-(self.y/2), self.x, self.y), 1)
 
 # Constants
 WIDTH = 850
@@ -122,51 +128,35 @@ neptune = Planet (400,
 venus_orbit = Orbit(200,
                     100,
                     shuffled_colors[0],
-                    screen,
-                    WIDTH,
-                    HEIGHT)
+                    screen)
 mercury_orbit = Orbit(300,
                     200,
                     shuffled_colors[1],
-                    screen,
-                    WIDTH,
-                    HEIGHT)
+                    screen)
 earth_orbit = Orbit(400,
                     300,
                     shuffled_colors[2],
-                    screen,
-                    WIDTH,
-                    HEIGHT)
+                    screen)
 mars_orbit = Orbit(500,
                     400,
                     shuffled_colors[3],
-                    screen,
-                    WIDTH,
-                    HEIGHT)
+                    screen)
 jupiter_orbit = Orbit(600,
                     500,
                     shuffled_colors[4],
-                    screen,
-                    WIDTH,
-                    HEIGHT)
+                    screen)
 saturn_orbit = Orbit(700,
                     600,
                     shuffled_colors[5],
-                    screen,
-                    WIDTH,
-                    HEIGHT)
+                    screen)
 uranus_orbit = Orbit(800,
                     700,
                     shuffled_colors[6],
-                    screen,
-                    WIDTH,
-                    HEIGHT)
+                    screen)
 neptune_orbit = Orbit(900,
                     800,
                     shuffled_colors[7],
-                    screen,
-                    WIDTH,
-                    HEIGHT)
+                    screen)
 
 # Main loop
 while running:
