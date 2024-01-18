@@ -2,12 +2,22 @@
 
 # Imports
 import pygame, random, math
-from sun import Sun
 
 def shuffle(orig):
     dest = orig[:]
     random.shuffle(dest)
     return dest
+
+class Sun:
+    def __init__(self, x: int, y: int, radius: int, color: tuple, screen: object):
+        self.x = x
+        self.y = y
+        self.radius = radius
+        self.color = color
+        self.screen = screen
+        
+    def draw(self):
+        pygame.draw.circle(self.screen, self.color, (self.x, self.y), self.radius)
 
 class Planet:
     def __init__(self, ratio_x: int, ratio_y: int, radius: int, color: tuple, screen: object, angle_increase: int):
