@@ -1,15 +1,33 @@
 # Planetarium
 
 # Imports
-import pygame, random
+import pygame, random, math
 from sun import Sun
-from planet import Planet
+# from planet import Planet
 from orbit import Orbit
 
 def shuffle(orig):
     dest = orig[:]
     random.shuffle(dest)
     return dest
+
+class Planet:
+    def __init__(self, ratio_x: int, ratio_y: int, radius: int, color: tuple, screen: object, angle_increase: int):
+        self.ratio_x = ratio_x
+        self.ratio_y = ratio_y
+        self.radius = radius
+        self.color = color
+        self.screen = screen
+        self.angle_increase = angle_increase
+        self.angle = 0
+        # self.x = WIDTH / 2
+        # self.y = HEIGHT / 2
+        
+    def move(self):
+        self.y = (int(math.cos(self.angle) * self.ratio_x) + WIDTH / 2)
+        self.x = (int(math.sin(self.angle) * self.ratio_y) + HEIGHT / 2)
+        pygame.draw.circle(self.screen, self.color, (self.x, self.y), self.radius)
+        self.angle -= self.angle_increase
 
 # Constants
 WIDTH = 850
@@ -56,65 +74,49 @@ venus = Planet (50,
                 sizes_1[0],
                 shuffled_colors[0],
                 screen,
-                shuffled_velocities[0],
-                WIDTH,
-                HEIGHT)
+                shuffled_velocities[0])
 mercury = Planet (100,
                 150,
                 sizes_1[1],
                 shuffled_colors[1],
                 screen,
-                shuffled_velocities[1],
-                WIDTH,
-                HEIGHT)
+                shuffled_velocities[1])
 earth = Planet (150,
                 200,
                 sizes_1[2],
                 shuffled_colors[2],
                 screen,
-                shuffled_velocities[2],
-                WIDTH,
-                HEIGHT)
+                shuffled_velocities[2])
 mars = Planet (200,
                 250,
                 shuffled_sizes[0],
                 shuffled_colors[3],
                 screen,
-                shuffled_velocities[3],
-                WIDTH,
-                HEIGHT)
+                shuffled_velocities[3])
 jupiter = Planet (250,
                 300,
                 shuffled_sizes[1],
                 shuffled_colors[4],
                 screen,
-                shuffled_velocities[4],
-                WIDTH,
-                HEIGHT)
+                shuffled_velocities[4])
 saturn = Planet (300,
                 350,
                 shuffled_sizes[2],
                 shuffled_colors[5],
                 screen,
-                shuffled_velocities[5],
-                WIDTH,
-                HEIGHT)
+                shuffled_velocities[5])
 uranus = Planet (350,
                 400,
                 shuffled_sizes[3],
                 shuffled_colors[6],
                 screen,
-                shuffled_velocities[6],
-                WIDTH,
-                HEIGHT)
+                shuffled_velocities[6])
 neptune = Planet (400,
                 450,
                 shuffled_sizes[4],
                 shuffled_colors[7],
                 screen,
-                shuffled_velocities[7],
-                WIDTH,
-                HEIGHT)
+                shuffled_velocities[7])
 
 # Orbits
 venus_orbit = Orbit(200,
