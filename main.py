@@ -3,11 +3,13 @@
 # Imports
 import pygame, random, math
 
+# Functions
 def shuffle(orig):
     dest = orig[:]
     random.shuffle(dest)
     return dest
 
+# Classes
 class Sun:
     def __init__(self, x: int, y: int, radius: int, color: tuple, screen: object):
         self.x = x
