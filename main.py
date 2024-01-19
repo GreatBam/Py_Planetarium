@@ -170,6 +170,10 @@ neptune_orbit = Orbit(900,
                     shuffled_colors[7],
                     screen)
 
+# Objects list
+planets = [venus, mercury, earth, mars, jupiter, saturn, uranus, neptune]
+orbits = [venus_orbit, mercury_orbit, earth_orbit, mars_orbit, jupiter_orbit, saturn_orbit, uranus_orbit, neptune_orbit]
+
 # Main loop
 while running:
     # Event loop
@@ -182,24 +186,12 @@ while running:
     sun.draw()
     
     # Orbits
-    venus_orbit.draw()
-    mercury_orbit.draw()
-    earth_orbit.draw()
-    mars_orbit.draw()
-    jupiter_orbit.draw()
-    saturn_orbit.draw()
-    # uranus_orbit.draw()
-    # neptune_orbit.draw()
+    for orbit in orbits:
+        orbit.draw()
     
     # Planets
-    venus.move()
-    mercury.move()
-    earth.move()
-    mars.move()
-    jupiter.move()
-    saturn.move()
-    # uranus.move()
-    # neptune.move()
+    for planet in planets:
+        planet.move()
     
     # Draw
     pygame.display.flip()
